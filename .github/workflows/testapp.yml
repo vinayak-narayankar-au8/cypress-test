@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -14,3 +14,4 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: npm run start-github
+          wait-on: "http://localhost:3000"
